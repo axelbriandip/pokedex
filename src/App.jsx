@@ -7,6 +7,10 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 // importando acciones del slice
 import { increment, setCounter } from './store/slices/counter.slice';
+// importando rutas protegidas
+import ProtectedRoutes from './components/ProtectedRoutes';
+// importando distintos componentes
+import Login from './components/Login';
 
 function App() {
   // para despachar acciones
@@ -31,9 +35,10 @@ function App() {
       <HashRouter>
         {/* nav */}
         <Routes>
-          {/* <Route path='' element={}/>
-          <Route path='' element={}/>
-          <Route path='' element={}/> */}
+          <Route path='/' element={<Login/>}/>
+          <Route element={<ProtectedRoutes/>}>
+            {/* rutas protegidas abajo */}
+          </Route>
         </Routes>
         {/* footer */}
       </HashRouter>
