@@ -12,3 +12,8 @@ body {
   background-color: var(--white);
   color: var(--black);
 }
+.card {
+  border: 1px solid var(--black);
+  width: 12rem;
+  margin: 0.5rem;
+}

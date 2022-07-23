@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUserName } from '../store/slices/userName.slice';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [ userName_st, setUserName_st ] = useState('');
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const submit = e => {
         e.preventDefault();
         dispatch(setUserName(userName_st));
+        navigate('/pokedex');
     }
 
     return (

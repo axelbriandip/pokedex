@@ -11,6 +11,8 @@ import { increment, setCounter } from './store/slices/counter.slice';
 import ProtectedRoutes from './components/ProtectedRoutes';
 // importando distintos componentes
 import Login from './components/Login';
+import Pokedex from './components/Pokedex';
+import PokemonDetails from './components/PokemonDetails';
 
 function App() {
   // para despachar acciones
@@ -38,6 +40,8 @@ function App() {
           <Route path='/' element={<Login/>}/>
           <Route element={<ProtectedRoutes/>}>
             {/* rutas protegidas abajo */}
+            <Route path='/pokedex' element={<Pokedex/>}/>
+            <Route path='/pokedex/pokemondetails/:id' element={<PokemonDetails/>}/>
           </Route>
         </Routes>
         {/* footer */}
