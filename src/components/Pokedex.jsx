@@ -8,9 +8,21 @@ const Pokedex = () => {
     const userName_store = useSelector(state => state.userName);
     const [ pokemons, setPokemons ] = useState([]);
     useEffect(() => {
-        axios.get('https://pokeapi.co/api/v2/pokemon')
+        axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50')
             .then(res => setPokemons(res.data.results))
     }, [ ])
+
+    const perPage = 4;
+    const [ page, setPage ] = useState(1);
+    const lastIndex = page * perPage;
+    const firstIndex = lastIndex - perPage;
+    const lastPage = Math.ceil(pokemons.length / perPage);
+    const numbers = [];
+    for(let i = 1; i <= lastPage; i++) {
+        numbers.push(i);
+    }
+    const pokemonsFiltered = pokemons.slice(firstIndex, lastIndex);
+
     const navigate = useNavigate();
     const [ pokemonSearch, setPokemonSearch ] = useState('');
     const search = e => {
@@ -49,9 +61,24 @@ const Pokedex = () => {
                     ))
                 }
             </select>
+            <div>
+                <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+                    Prev page
+                </button>
+                {
+                    numbers.map(number => (
+                        <button key={number} onClick={() => setPage(number)}>
+                            {number}
+                        </button>
+                    ))
+                }
+                <button onClick={() => setPage(page + 1)} disabled={page === lastPage}>
+                    Next page
+                </button>
+            </div>
             <hr />
             {
-                pokemons?.map(pokemon => (
+                pokemonsFiltered?.map(pokemon => (
                     <PokemonCard
                     key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
                     url={pokemon.url ? pokemon.url : pokemon.pokemon.url}

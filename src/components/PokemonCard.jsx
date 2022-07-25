@@ -12,7 +12,7 @@ const PokemonCard = ({ url }) => {
     // console.log(pokemon);
     return (
         <div className='card' onClick={() => navigate(`/pokedex/pokemondetails/${pokemon.id}`)}>
-            <h3>{pokemon.name}</h3>
+            <h3>{pokemon.name} - {pokemon.id}</h3>
             <img src={pokemon.sprites?.front_default} />
         </div>
     );
