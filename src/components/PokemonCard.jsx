@@ -12,8 +12,17 @@ const PokemonCard = ({ url }) => {
     // console.log(pokemon);
     return (
         <div className='card' onClick={() => navigate(`/pokedex/pokemondetails/${pokemon.id}`)}>
-            <h3>{pokemon.name} - {pokemon.id}</h3>
-            <img src={pokemon.sprites?.front_default} />
+            <div className="text">
+                <span className='name'>{pokemon.name}</span>
+                <span>Types: {pokemon.types?.[0].type.name}</span>
+                <span>HP: {pokemon.stats?.[0].base_stat}</span>
+                <span>Attack: {pokemon.stats?.[1].base_stat}</span>
+                <span>Defense: {pokemon.stats?.[2].base_stat}</span>
+                <span>Speed: {pokemon.stats?.[5].base_stat}</span>
+            </div>
+            <div className="img">
+                <img src={pokemon.sprites?.front_default} />
+            </div>
         </div>
     );
 };

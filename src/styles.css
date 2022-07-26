@@ -14,11 +14,6 @@ body {
   background-color: var(--white);
   color: var(--black);
 }
-.card {
-  border: 1px solid var(--black);
-  width: 12rem;
-  margin: 0.5rem;
-}
 /* CONTAINER LOGIN */
 .hero {
   display: flex;
@@ -75,6 +70,7 @@ form span {
   margin: 1.5rem 0 .75rem;
 }
 /* POKEDEX */
+/* SEARCH POKEDEX */
 .container-pokedex {
   padding: 3.5rem 2.5rem;
 }
@@ -95,4 +91,41 @@ form span {
   flex-direction: column;
   align-items: center;
   margin: 3rem 0;
+}
+/* CARDS POKEDEX */
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 13rem;
+  height: 11rem;
+  margin: 0.5rem; 
+  background-color: var(--grey);
+  border-radius: 1.5rem;
+  color: var(--white);
+  display: flex;
+  padding: 1rem;
+}
+.card .text {
+  width: 70%;
+}
+.card .img {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0;
+}
+.card .img img {
+  width: 10rem;
+}
+.card .text span {
+  display: block;
+  font-size: .9rem;
+}
+.card .text .name {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
 }

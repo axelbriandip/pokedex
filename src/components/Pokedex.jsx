@@ -12,7 +12,7 @@ const Pokedex = () => {
             .then(res => setPokemons(res.data.results))
     }, [ ])
 
-    const perPage = 4;
+    const perPage = 10;
     const [ page, setPage ] = useState(1);
     const lastIndex = page * perPage;
     const firstIndex = lastIndex - perPage;
@@ -60,7 +60,7 @@ const Pokedex = () => {
                     placeholder="Insert name pokemon"
                     />
                     <button>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i className="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
                 {/* SEARCH TYPE */}
@@ -73,14 +73,16 @@ const Pokedex = () => {
                 </select>
             </div>
             {/* CARDS */}
-            {
-                pokemonsFiltered?.map(pokemon => (
-                    <PokemonCard
-                    key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
-                    url={pokemon.url ? pokemon.url : pokemon.pokemon.url}
-                    />
-                ))
-            }
+            <div className="container-cards">
+                {
+                    pokemonsFiltered?.map(pokemon => (
+                        <PokemonCard
+                        key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
+                        url={pokemon.url ? pokemon.url : pokemon.pokemon.url}
+                        />
+                    ))
+                }
+            </div>
             {/* PAGINATION */}
             <div>
                 <button onClick={() => setPage(page - 1)} disabled={page === 1}>

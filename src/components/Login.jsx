@@ -24,7 +24,7 @@ const Login = () => {
                     <span>Give me your name to start</span>
                     <input type="text" placeholder='Insert name' value={userName_st} onChange={e => setUserName_st(e.target.value)}/>
                     <button>
-                        <i class="fa-solid fa-paper-plane"></i>
+                        <i className="fa-solid fa-paper-plane"></i>
                     </button>
                 </form>
             </div>
