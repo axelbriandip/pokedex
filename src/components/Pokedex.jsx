@@ -12,7 +12,7 @@ const Pokedex = () => {
             .then(res => setPokemons(res.data.results))
     }, [ ])
 
-    const perPage = 10;
+    const perPage = 12;
     const [ page, setPage ] = useState(1);
     const lastIndex = page * perPage;
     const firstIndex = lastIndex - perPage;
@@ -84,20 +84,22 @@ const Pokedex = () => {
                 }
             </div>
             {/* PAGINATION */}
-            <div>
-                <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-                    Prev page
-                </button>
-                {
-                    numbers.map(number => (
-                        <button key={number} onClick={() => setPage(number)}>
-                            {number}
-                        </button>
-                    ))
-                }
-                <button onClick={() => setPage(page + 1)} disabled={page === lastPage}>
-                    Next page
-                </button>
+            <div className='pagination'>
+                <div className="content-pagination">
+                    <button onClick={() => setPage(page - 1)} disabled={page === 1} className="prev">
+                        Prev page
+                    </button>
+                    {
+                        numbers.map(number => (
+                            <button key={number} onClick={() => setPage(number)}>
+                                {number}
+                            </button>
+                        ))
+                    }
+                    <button onClick={() => setPage(page + 1)} disabled={page === lastPage} className="next">
+                        Next page
+                    </button>
+                </div>
             </div>
         </div>
     );
