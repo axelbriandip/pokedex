@@ -38,11 +38,11 @@ body {
   justify-content: center;
   padding-top: 5rem;
 }
-.container-login form {
+.container-login form, .search-name, .search-type {
   width: fit-content;
   position: relative;
 }
-.container-login form input {
+.container-login form input, .search-name input, .search-type {
   height: 3rem;
   width: 22rem;
   border-radius: 3rem;
@@ -52,10 +52,10 @@ body {
   color: var(--grey);
   font-size: 1.25rem;
 }
-input:focus {
+input:focus, select:focus, button:focus {
   outline: none;
 }
-.container-login form button {
+.container-login form button, .search-name button {
   position: absolute;
   right: 0;
   height: 3rem;
@@ -63,8 +63,9 @@ input:focus {
   border-radius: 50%;
   border: none;
   background-color: var(--green);
+  cursor: pointer;
 }
-.container-login form button i {
+.container-login form button i, .search-name button i {
   color: #eee;
   font-size: 1.2rem;
 }
@@ -72,4 +73,26 @@ form span {
   display: block;
   text-align: center;
   margin: 1.5rem 0 .75rem;
+}
+/* POKEDEX */
+.container-pokedex {
+  padding: 3.5rem 2.5rem;
+}
+.container-pokedex p {
+  margin: 1.5rem 0;
+}
+.container-pokedex h1 {
+  font-size: 2.5rem;
+}
+.search-name input, .search-type {
+  width: 30rem;
+}
+.toggle {
+  display: none;
+}
+.container-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0;
 }

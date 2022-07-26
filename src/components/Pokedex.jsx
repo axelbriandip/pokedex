@@ -43,24 +43,45 @@ const Pokedex = () => {
     }
     // console.log(pokemons);
     return (
-        <div>
-            <h1>test pokedex</h1>
-            <h2>¡Bienvenido {userName_store}!</h2>
-            <form onSubmit={search}>
-                <input
-                type="text"
-                value={pokemonSearch}
-                onChange={e => setPokemonSearch(e.target.value)}
-                />
-                <button>Search</button>
-            </form>
-            <select onChange={e => filterType(e.target.value)}>
-                {
-                    types.map(type => (
-                        <option key={type.url} value={type.url}>{type.name}</option>
-                    ))
-                }
-            </select>
+        <div className='container-pokedex'>
+                {/* HEADER */}
+            <div className="header-pokedex">
+                <h1>Pokedex</h1>
+                <p>Welcome {userName_store}, here you can find your favorite pokemon</p>
+            </div>
+            {/* SEARCH */}
+            <div className="container-search">
+                {/* SEARCH NAME */}
+                <form onSubmit={search} className="search-name">
+                    <input
+                    type="text"
+                    value={pokemonSearch}
+                    onChange={e => setPokemonSearch(e.target.value)}
+                    placeholder="Insert name pokemon"
+                    />
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                {/* SEARCH TYPE */}
+                <select onChange={e => filterType(e.target.value)} className="search-type toggle">
+                    {
+                        types.map(type => (
+                            <option key={type.url} value={type.url}>{type.name}</option>
+                        ))
+                    }
+                </select>
+            </div>
+            {/* CARDS */}
+            {
+                pokemonsFiltered?.map(pokemon => (
+                    <PokemonCard
+                    key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
+                    url={pokemon.url ? pokemon.url : pokemon.pokemon.url}
+                    />
+                ))
+            }
+            {/* PAGINATION */}
             <div>
                 <button onClick={() => setPage(page - 1)} disabled={page === 1}>
                     Prev page
@@ -76,15 +97,6 @@ const Pokedex = () => {
                     Next page
                 </button>
             </div>
-            <hr />
-            {
-                pokemonsFiltered?.map(pokemon => (
-                    <PokemonCard
-                    key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
-                    url={pokemon.url ? pokemon.url : pokemon.pokemon.url}
-                    />
-                ))
-            }
         </div>
     );
 };
