@@ -175,12 +175,12 @@ form span {
   width: 100%;
   height: 250px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 20rem);
+  grid-template-rows: 20rem 14rem 20rem;
   grid-template-areas:
   "hero-detail hero-detail movements"
   "type habilities movements"
   "stats stats movements";
-  gap: 1rem;
+  gap: 1rem 2rem;
 }
 .hero-detail {
   background-color: wheat;
@@ -225,9 +225,23 @@ form span {
   background-color: blue;
   grid-area: movements;
 }
-.type {
+/* TYPES */
+.type, .habilities {
   background-color: yellow;
   grid-area: type;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.type span, .habilities span {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1rem;
+  margin: .5rem 0;
+}
+.type h2, .habilities h2 {
+  margin-bottom: .75rem;
 }
 .habilities {
   background-color: coral;

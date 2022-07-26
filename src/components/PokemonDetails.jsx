@@ -36,8 +36,22 @@ const PokemonDetails = () => {
                     </div>
                 </div>
                 <div className="movements">mov</div>
-                <div className="type">type</div>
-                <div className="habilities">habilities</div>
+                <div className="type">
+                    <h2>Type</h2>
+                    {
+                        pokemon.types?.map(item => (
+                            <span className='type-items'>{item.type.name}</span>
+                        ))
+                    }
+                </div>
+                <div className="habilities">
+                    <h2>Abilities</h2>
+                    {
+                        pokemon.abilities?.map(item => (
+                            <span className='type-items'>{item.ability.name}</span>
+                        ))
+                    }
+                </div>
                 <div className="stats">stats</div>
             </div>
         </div>
