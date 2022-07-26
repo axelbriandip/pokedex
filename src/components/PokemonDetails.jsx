@@ -35,7 +35,19 @@ const PokemonDetails = () => {
                         <span># {pokemon.id}</span>
                     </div>
                 </div>
-                <div className="movements">mov</div>
+                <div className="movements">
+                    <div>
+                        <i className="fa-solid fa-location-dot"></i> Encounters
+                    </div>
+                    <div>
+                        <h2>Movements</h2>
+                        {
+                            pokemon.moves?.map(item => (
+                                <span>{item.move.name}</span>
+                            ))
+                        }
+                    </div>
+                </div>
                 <div className="type">
                     <h2>Type</h2>
                     {

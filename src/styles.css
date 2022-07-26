@@ -164,9 +164,6 @@ form span {
 .container-pokemon-details {
   padding: 2rem 3rem;
 }
-.container-pokemon-details .header {
-  background-color: var(--grey);
-}
 .container-pokemon-details .header img {
   width: 15rem;
 }
@@ -183,7 +180,7 @@ form span {
   gap: 1rem 2rem;
 }
 .hero-detail {
-  background-color: wheat;
+  background-color: #fff;
   grid-area: hero-detail;
   display: flex;
   flex-direction: column;
@@ -221,13 +218,9 @@ form span {
 .hero-second h1 {
   margin-bottom: 1rem;
 }
-.movements {
-  background-color: blue;
-  grid-area: movements;
-}
-/* TYPES */
+/* TYPES AND ABILITIES*/
 .type, .habilities {
-  background-color: yellow;
+  background-color: #fff;
   grid-area: type;
   padding: 2rem 1rem;
   display: flex;
@@ -244,9 +237,31 @@ form span {
   margin-bottom: .75rem;
 }
 .habilities {
-  background-color: coral;
+  background-color: #fff;
   grid-area: habilities;
 }
+/* MOVEMENTS */
+.movements {
+  grid-area: movements;
+  text-align: center;
+}
+.movements div:first-child {
+  background-color: #ddd;
+  padding: .5rem 0;
+  margin-bottom: 1rem;
+}
+.movements h2 {
+  padding-top: 1rem;
+}
+.movements div:last-child span {
+  display: block;
+  margin: .5rem 0;
+}
+.movements div:last-child {
+  background-color: #fff;
+  padding-bottom: .5rem;
+}
+/* STATS */
 .stats {
   background-color: violet;
   grid-area: stats;
