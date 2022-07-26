@@ -260,9 +260,46 @@ form span {
 .movements div:last-child {
   background-color: #fff;
   padding-bottom: .5rem;
+  overflow-y: scroll;
+  height: 100%;
 }
 /* STATS */
 .stats {
-  background-color: violet;
+  background-color: #fff;
   grid-area: stats;
+  text-align: center;
+  padding: 1rem;
+}
+.stats h2 {
+  margin-bottom: 1rem;
+}
+.stats .item {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.stats .item div {
+  height: 2rem;
+}
+.stats .item .title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 25%;
+  padding-right: 2rem;
+}
+.stats .item .title span {
+  background-color: #ddd;
+  border-radius: 4px;
+  padding: 4px;
+}
+.stats .item .bar {
+  background-color: #ddd;
+  width: 75%;
+}
+.stats .item .bar .progress {
+  background-color: var(--blue);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

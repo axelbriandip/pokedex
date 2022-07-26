@@ -64,7 +64,41 @@ const PokemonDetails = () => {
                         ))
                     }
                 </div>
-                <div className="stats">stats</div>
+                <div className="stats">
+                    <h2>Stats base</h2>
+                    <div className="item">
+                        <div className='title'><span>HP:</span></div>
+                        <div className='bar'>
+                            <div className='progress' style={{ width: `${pokemon.stats[0].base_stat}%` }}>
+                                {pokemon.stats[0].base_stat}/150
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <div className='title'><span>Speed:</span></div>
+                        <div className='bar'>
+                            <div className='progress' style={{ width: `${pokemon.stats[5].base_stat}%` }}>
+                                {pokemon.stats[5].base_stat}/150
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <div className='title'><span>Attack:</span></div>
+                        <div className='bar'>
+                            <div className='progress' style={{ width: `${pokemon.stats[1].base_stat}%` }}>
+                                {pokemon.stats[1].base_stat}/150
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <div className='title'><span>Defense:</span></div>
+                        <div className='bar'>
+                            <div className='progress' style={{ width: `${pokemon.stats[2].base_stat}%` }}>
+                                {pokemon.stats[2].base_stat}/150
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
