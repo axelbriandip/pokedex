@@ -14,17 +14,20 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h1>test login</h1>
-            <form onSubmit={submit}>
-                <input
-                type="text"
-                placeholder='Insert name'
-                value={userName_st}
-                onChange={e => setUserName_st(e.target.value)}
-                />
-                <button>Submit</button>
-            </form>
+        <div className='container-login'>
+            <div className="content-">
+                <div className="hero">
+                    <span>Hello trainer!</span>
+                    <img src="../img/Ash.png"/>
+                </div>
+                <form onSubmit={submit}>
+                    <span>Give me your name to start</span>
+                    <input type="text" placeholder='Insert name' value={userName_st} onChange={e => setUserName_st(e.target.value)}/>
+                    <button>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

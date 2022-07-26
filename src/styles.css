@@ -2,11 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 :root {
   --black: #333;
+  --grey: #666;
   --white: #eee;
+  --green: #40ff2f;
 }
 body {
   background-color: var(--white);
@@ -16,4 +18,58 @@ body {
   border: 1px solid var(--black);
   width: 12rem;
   margin: 0.5rem;
+}
+/* CONTAINER LOGIN */
+.hero {
+  display: flex;
+  align-items: flex-start;
+}
+.hero img {
+  width: 8rem;
+}
+.hero span {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+.container-login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+.container-login form {
+  width: fit-content;
+  position: relative;
+}
+.container-login form input {
+  height: 3rem;
+  width: 22rem;
+  border-radius: 3rem;
+  border: none;
+  box-shadow: -10px -10px 15px rgb(58 58 58 / 9%), 10px 10px 15px rgb(66 66 66 / 35%);
+  padding-left: 1rem;
+  color: var(--grey);
+  font-size: 1.25rem;
+}
+input:focus {
+  outline: none;
+}
+.container-login form button {
+  position: absolute;
+  right: 0;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--green);
+}
+.container-login form button i {
+  color: #eee;
+  font-size: 1.2rem;
+}
+form span {
+  display: block;
+  text-align: center;
+  margin: 1.5rem 0 .75rem;
 }
