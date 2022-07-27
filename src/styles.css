@@ -348,3 +348,6 @@ form span {
     transform: rotateZ(360deg);
   }
 }
+.itemPerPage {
+  margin-bottom: 1rem;
+}

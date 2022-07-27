@@ -15,7 +15,7 @@ const Pokedex = () => {
             .then(res => setPokemons(res.data.results))
     }, [ ])
 
-    const perPage = 12;
+    const [ perPage, setPerPage ] = useState(12);
     const [ page, setPage ] = useState(1);
     const lastIndex = page * perPage;
     const firstIndex = lastIndex - perPage;
@@ -95,6 +95,17 @@ const Pokedex = () => {
                         isSearchForType ? "Search for name" : "Search for type"
                     }
                 </div>
+            </div>
+            {/* ITEMS PER PAGE */}
+            <div className="itemPerPage">
+                <span>Items per page: </span>
+                <select>
+                    <option>4</option>
+                    <option>8</option>
+                    <option>12</option>
+                    <option>16</option>
+                    <option>20</option>
+                </select>
             </div>
             {/* CARDS */}
             <div className="container-cards">
