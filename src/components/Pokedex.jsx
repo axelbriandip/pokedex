@@ -99,10 +99,10 @@ const Pokedex = () => {
             {/* ITEMS PER PAGE */}
             <div className="itemPerPage">
                 <span>Items per page: </span>
-                <select>
+                <select onChange={e => setPerPage(e.target.value)}>
                     <option>4</option>
                     <option>8</option>
-                    <option>12</option>
+                    <option selected>12</option>
                     <option>16</option>
                     <option>20</option>
                 </select>
