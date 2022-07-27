@@ -42,9 +42,6 @@ const PokemonDetails = () => {
                     </div>
                 </div>
                 <div className="movements">
-                    <div onClick={() => navigate(`/pokedex/pokemondetails/${pokemon.id}/encounters`)}>
-                        <i className="fa-solid fa-location-dot"></i> Encounters
-                    </div>
                     <div>
                         <h2>Movements</h2>
                         {
