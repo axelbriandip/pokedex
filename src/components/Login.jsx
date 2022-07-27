@@ -15,6 +15,9 @@ const Login = () => {
 
     return (
         <div className='container-login'>
+            <div className="pokeball">
+                <img src="../img/pokeball2.png"/>
+            </div>
             <div className="content-">
                 <div className="hero">
                     <span>Hello trainer!</span>

@@ -114,6 +114,10 @@ form span {
   display: flex;
   padding: 1rem;
   cursor: pointer;
+  transition: .2s all;
+}
+.card:hover {
+  transform: scale(1.1);
 }
 .card .text {
   width: 70%;
@@ -316,4 +320,27 @@ form span {
   top: 2rem;
   left: 3rem;
 }
-/* ENCOUNTERS */
+/* POKEBALL */
+.pokeball {
+  position: absolute;
+  z-index: -1;
+  top: 2rem;
+  right: 4rem;
+  /* animation */
+  animation-name: rotation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.pokeball img {
+  width: 20rem;
+  opacity: 70%;
+}
+@keyframes rotation {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}

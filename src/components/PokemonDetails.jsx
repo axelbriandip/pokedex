@@ -14,6 +14,9 @@ const PokemonDetails = () => {
     }, [ id ])
     return (
         <div className='container-pokemon-details'>
+            <div className="pokeball">
+                <img src="../img/pokeball2.png"/>
+            </div>
             <i onClick={() => navigate('/pokedex')} className="fa-solid fa-arrow-left-long arrow"></i>
             <div className="header">
                 <img src="../img/logo-pokemon.png"/>

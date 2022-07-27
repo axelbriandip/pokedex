@@ -51,6 +51,9 @@ const Pokedex = () => {
     }
     return (
         <div className='container-pokedex'>
+            <div className="pokeball">
+                <img src="../img/pokeball2.png"/>
+            </div>
             <i onClick={leave} className="arrow fa-solid fa-arrow-right-from-bracket"></i>
             {/* HEADER */}
             <div className="header-pokedex">
