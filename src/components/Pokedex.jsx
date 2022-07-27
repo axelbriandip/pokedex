@@ -49,6 +49,14 @@ const Pokedex = () => {
         navigate('/');
         dispatch(setUserName(''));
     }
+    const [ isSearchForType, setIsSearchForType ] = useState(false);
+    const toggleSearch = () => {
+        if(isSearchForType) {
+            setIsSearchForType(false)
+        } else {
+            setIsSearchForType(true)
+        }
+    }
     return (
         <div className='container-pokedex'>
             <div className="pokeball">
@@ -63,7 +71,7 @@ const Pokedex = () => {
             {/* SEARCH */}
             <div className="container-search">
                 {/* SEARCH NAME */}
-                <form onSubmit={search} className="search-name">
+                <form onSubmit={search} className={isSearchForType ? "search-nam toggle" : "search-name"}>
                     <input
                     type="text"
                     value={pokemonSearch}
@@ -75,13 +83,18 @@ const Pokedex = () => {
                     </button>
                 </form>
                 {/* SEARCH TYPE */}
-                <select onChange={e => filterType(e.target.value)} className="search-type toggle">
+                <select onChange={e => filterType(e.target.value)} className={isSearchForType ? "search-type" : "search-type toggle"}>
                     {
                         types.map(type => (
                             <option key={type.url} value={type.url}>{type.name}</option>
                         ))
                     }
                 </select>
+                <div onClick={toggleSearch} className='searchFor'>
+                    {
+                        isSearchForType ? "Search for name" : "Search for type"
+                    }
+                </div>
             </div>
             {/* CARDS */}
             <div className="container-cards">
