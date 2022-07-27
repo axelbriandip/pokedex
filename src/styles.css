@@ -144,6 +144,7 @@ form span {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: .5rem;
+  font-size: 1rem;
 }
 /* PAGINATION */
 .pagination {
@@ -350,4 +351,7 @@ form span {
 }
 .itemPerPage {
   margin-bottom: 1rem;
+}
+.item-type {
+  display: inline !important
 }
