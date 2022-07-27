@@ -179,7 +179,6 @@ form span {
 .grid-container {
   display: grid;
   width: 100%;
-  height: 250px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 20rem 14rem 20rem;
   grid-template-areas:
