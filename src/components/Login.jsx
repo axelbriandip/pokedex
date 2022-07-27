@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux';
 import { setUserName } from '../store/slices/userName.slice';
 import { useNavigate } from 'react-router-dom';
 
+// import img
+import ash from '../../img/Ash.png';
+
 const Login = () => {
     const [ userName_st, setUserName_st ] = useState('');
     const dispatch = useDispatch();
@@ -21,7 +24,8 @@ const Login = () => {
             <div className="content-">
                 <div className="hero">
                     <span>Hello trainer!</span>
-                    <img src="../img/Ash.png"/>
+                    {/* <img src="../img/Ash.png"/> */}
+                    <img src={ash}/>
                 </div>
                 <form onSubmit={submit}>
                     <span>Give me your name to start</span>
