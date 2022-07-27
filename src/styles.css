@@ -355,3 +355,8 @@ form span {
 .item-type {
   display: inline !important
 }
+.selected {
+  background-color: var(--green) !important;
+  color: var(--blue) !important;
+  font-weight: bold;
+}
