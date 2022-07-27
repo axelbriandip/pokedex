@@ -5,6 +5,7 @@ import PokemonCard from './PokemonCard';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUserName } from '../store/slices/userName.slice';
+import pokeball from '../../img/pokeball2.png';
 
 const Pokedex = () => {
     const dispatch = useDispatch();
@@ -60,7 +61,7 @@ const Pokedex = () => {
     return (
         <div className='container-pokedex'>
             <div className="pokeball">
-                <img src="../img/pokeball2.png"/>
+                <img src={pokeball}/>
             </div>
             <i onClick={leave} className="arrow fa-solid fa-arrow-right-from-bracket"></i>
             {/* HEADER */}

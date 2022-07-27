@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import pokeball from '../../img/pokeball2.png';
 
 const PokemonDetails = () => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const PokemonDetails = () => {
     return (
         <div className='container-pokemon-details'>
             <div className="pokeball">
-                <img src="../img/pokeball2.png"/>
+                <img src={pokeball}/>
             </div>
             <i onClick={() => navigate('/pokedex')} className="fa-solid fa-arrow-left-long arrow"></i>
             <div className="header">

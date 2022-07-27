@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 // import img
 import ash from '../../img/Ash.png';
+import pokeball from '../../img/pokeball2.png';
 
 const Login = () => {
     const [ userName_st, setUserName_st ] = useState('');
@@ -19,7 +20,7 @@ const Login = () => {
     return (
         <div className='container-login'>
             <div className="pokeball">
-                <img src="../img/pokeball2.png"/>
+                <img src={pokeball}/>
             </div>
             <div className="content-">
                 <div className="hero">
