@@ -3,8 +3,11 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import PokemonCard from './PokemonCard';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUserName } from '../store/slices/userName.slice';
 
 const Pokedex = () => {
+    const dispatch = useDispatch();
     const userName_store = useSelector(state => state.userName);
     const [ pokemons, setPokemons ] = useState([]);
     useEffect(() => {
@@ -42,9 +45,14 @@ const Pokedex = () => {
         .then(res => setPokemons(res.data.pokemon))
     }
     // console.log(pokemons);
+    const leave = () => {
+        navigate('/');
+        dispatch(setUserName(''));
+    }
     return (
         <div className='container-pokedex'>
-                {/* HEADER */}
+            <i onClick={leave} className="arrow fa-solid fa-arrow-right-from-bracket"></i>
+            {/* HEADER */}
             <div className="header-pokedex">
                 <h1>Pokedex</h1>
                 <p>Welcome {userName_store}, here you can find your favorite pokemon</p>

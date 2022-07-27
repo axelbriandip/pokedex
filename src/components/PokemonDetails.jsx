@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const PokemonDetails = () => {
+    const navigate = useNavigate();
     const { id } = useParams()
     const [ pokemon, setPokemon ] = useState({});
     useEffect(() => {
@@ -12,6 +14,7 @@ const PokemonDetails = () => {
     }, [ id ])
     return (
         <div className='container-pokemon-details'>
+            <i onClick={() => navigate('/pokedex')} className="fa-solid fa-arrow-left-long arrow"></i>
             <div className="header">
                 <img src="../img/logo-pokemon.png"/>
             </div>
@@ -36,14 +39,14 @@ const PokemonDetails = () => {
                     </div>
                 </div>
                 <div className="movements">
-                    <div>
+                    <div onClick={() => navigate(`/pokedex/pokemondetails/${pokemon.id}/encounters`)}>
                         <i className="fa-solid fa-location-dot"></i> Encounters
                     </div>
                     <div>
                         <h2>Movements</h2>
                         {
                             pokemon.moves?.map(item => (
-                                <span>{item.move.name}</span>
+                                <span key={item.move.url}>{item.move.name}</span>
                             ))
                         }
                     </div>
@@ -52,7 +55,7 @@ const PokemonDetails = () => {
                     <h2>Type</h2>
                     {
                         pokemon.types?.map(item => (
-                            <span className='type-items'>{item.type.name}</span>
+                            <span key={item.type.url} className='type-items'>{item.type.name}</span>
                         ))
                     }
                 </div>
@@ -60,7 +63,7 @@ const PokemonDetails = () => {
                     <h2>Abilities</h2>
                     {
                         pokemon.abilities?.map(item => (
-                            <span className='type-items'>{item.ability.name}</span>
+                            <span key={item.ability.url} className='type-items'>{item.ability.name}</span>
                         ))
                     }
                 </div>
@@ -69,32 +72,32 @@ const PokemonDetails = () => {
                     <div className="item">
                         <div className='title'><span>HP:</span></div>
                         <div className='bar'>
-                            <div className='progress' style={{ width: `${pokemon.stats[0].base_stat}%` }}>
-                                {pokemon.stats[0].base_stat}/150
+                            <div className='progress' style={{ width: `${pokemon.stats?.[0].base_stat}%` }}>
+                                {pokemon.stats?.[0].base_stat}/150
                             </div>
                         </div>
                     </div>
                     <div className="item">
                         <div className='title'><span>Speed:</span></div>
                         <div className='bar'>
-                            <div className='progress' style={{ width: `${pokemon.stats[5].base_stat}%` }}>
-                                {pokemon.stats[5].base_stat}/150
+                            <div className='progress' style={{ width: `${pokemon.stats?.[5].base_stat}%` }}>
+                                {pokemon.stats?.[5].base_stat}/150
                             </div>
                         </div>
                     </div>
                     <div className="item">
                         <div className='title'><span>Attack:</span></div>
                         <div className='bar'>
-                            <div className='progress' style={{ width: `${pokemon.stats[1].base_stat}%` }}>
-                                {pokemon.stats[1].base_stat}/150
+                            <div className='progress' style={{ width: `${pokemon.stats?.[1].base_stat}%` }}>
+                                {pokemon.stats?.[1].base_stat}/150
                             </div>
                         </div>
                     </div>
                     <div className="item">
                         <div className='title'><span>Defense:</span></div>
                         <div className='bar'>
-                            <div className='progress' style={{ width: `${pokemon.stats[2].base_stat}%` }}>
-                                {pokemon.stats[2].base_stat}/150
+                            <div className='progress' style={{ width: `${pokemon.stats?.[2].base_stat}%` }}>
+                                {pokemon.stats?.[2].base_stat}/150
                             </div>
                         </div>
                     </div>

@@ -162,7 +162,7 @@ form span {
 /* POKEMON DETAILS */
 /* HEADER */
 .container-pokemon-details {
-  padding: 2rem 3rem;
+  padding: 4rem 3rem;
 }
 .container-pokemon-details .header img {
   width: 15rem;
@@ -303,3 +303,17 @@ form span {
   justify-content: center;
   align-items: center;
 }
+.container-pokemon-details .arrow,
+.container-pokedex .arrow {
+  font-size: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  cursor: pointer;
+}
+.container-pokemon-details .arrow {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+}
+/* ENCOUNTERS */
