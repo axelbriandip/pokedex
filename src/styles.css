@@ -240,7 +240,7 @@ form span {
   background-color: var(--blue);
   color: var(--white);
   padding: 1rem;
-  margin: .5rem 0;
+  margin: .25rem 0;
 }
 .type h2, .habilities h2 {
   margin-bottom: .75rem;
@@ -248,6 +248,7 @@ form span {
 .habilities {
   background-color: #fff;
   grid-area: habilities;
+  overflow-y: scroll;
 }
 /* MOVEMENTS */
 .movements {
