@@ -29,7 +29,7 @@ const PokemonDetails = () => {
                             <span>Weight</span>
                         </div>
                         <div>
-                            <img src={pokemon.sprites?.front_default}/>
+                            <img src={pokemon.sprites?.other.dream_world.front_default}/>
                         </div>
                         <div>
                             <span>{pokemon.height}</span>

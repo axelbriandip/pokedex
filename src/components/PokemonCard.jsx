@@ -28,7 +28,7 @@ const PokemonCard = ({ url }) => {
                 <span><strong>Speed:</strong> {pokemon.stats?.[5].base_stat}</span>
             </div>
             <div className="img">
-                <img src={pokemon.sprites?.front_default} />
+                <img src={pokemon.sprites?.other.dream_world.front_default} />
             </div>
         </div>
     );

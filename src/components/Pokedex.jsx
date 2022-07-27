@@ -11,7 +11,7 @@ const Pokedex = () => {
     const userName_store = useSelector(state => state.userName);
     const [ pokemons, setPokemons ] = useState([]);
     useEffect(() => {
-        axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50')
+        axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1154')
             .then(res => setPokemons(res.data.results))
     }, [ ])
 
