@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import pokeball from '../../img/pokeball2.png';
+import logo_pokemon from '../../img/logo-pokemon.png';
 
 const PokemonDetails = () => {
     const navigate = useNavigate();
@@ -25,7 +26,7 @@ const PokemonDetails = () => {
             </div>
             <i onClick={() => navigate('/pokedex')} className="fa-solid fa-arrow-left-long arrow"></i>
             <div className="header">
-                <img src="../img/logo-pokemon.png"/>
+                <img src={logo_pokemon}/>
             </div>
             <div className="grid-container">
                 <div className="hero-detail">
