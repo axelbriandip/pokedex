@@ -1,0 +1,57 @@
+@import './columns.css';
+@import './login.css';
+@import './pokedex.css';
+@import './pokemon-details.css';
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+:root {
+  --black: #333;
+  --grey: #666;
+  --slate-grey: #777;
+  --white: #eee;
+  --green: #40ff2f;
+  --blue: #6c79db;
+}
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+/* POKEBALL BACKGROUND */
+.pokeball {
+  position: absolute;
+  z-index: -1;
+  top: 2rem;
+  right: 4rem;
+
+  animation-name: rotation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.pokeball img {
+  width: 20rem;
+  opacity: 70%;
+}
+@keyframes rotation {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.itemPerPage {
+  margin-bottom: 1rem;
+}
+.item-type {
+  display: inline !important
+}
+.selected {
+  background-color: var(--green) !important;
+  color: var(--blue) !important;
+  font-weight: bold;
+}

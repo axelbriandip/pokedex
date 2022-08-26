@@ -1,4 +1,4 @@
-import './styles.css';
+import './css/main.css';
 // para las rutas
 import { HashRouter, Routes, Route } from 'react-router-dom';
 // para seleccionar estados del store

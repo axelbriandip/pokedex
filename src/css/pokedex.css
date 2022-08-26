@@ -1,0 +1,111 @@
+/* SEARCH POKEDEX */
+.container-pokedex {
+    padding: 3.5rem 2.5rem;
+}
+
+.container-pokedex p {
+    margin: 1.5rem 0;
+}
+
+.container-pokedex h1 {
+    font-size: 2.5rem;
+}
+
+.search-name input,
+.search-type {
+    width: 30rem;
+}
+
+.toggle {
+    display: none;
+}
+
+.container-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.searchFor {
+    margin-top: 2rem;
+    cursor: pointer
+}
+
+/* CARDS POKEDEX */
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 13rem;
+    height: 11rem;
+    margin: 0.5rem;
+    background-color: var(--slate-grey);
+    border-radius: 1.5rem;
+    color: var(--white);
+    display: flex;
+    padding: 1rem;
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card .text {
+    width: 70%;
+}
+
+.card .img {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0;
+}
+
+.card .img img {
+    width: 5rem;
+}
+
+.card .text span {
+    display: block;
+    font-size: .9rem;
+}
+
+.card .text .name {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+
+/* PAGINATION */
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.content-pagination {
+    width: fit-content;
+    margin-top: 2rem;
+}
+
+.content-pagination button {
+    padding: .5rem;
+    margin: .25rem;
+    border-radius: .5rem;
+    border: none;
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.content-pagination button:hover {
+    background-color: var(--green);
+}

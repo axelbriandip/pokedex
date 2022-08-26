@@ -18,7 +18,6 @@ const PokemonDetails = () => {
     const porcSpeed = (pokemon.stats?.[5].base_stat / 150) * 100;
     const porcAttack = (pokemon.stats?.[1].base_stat / 150) * 100;
     const porcDefense = (pokemon.stats?.[2].base_stat / 150) * 100;
-    console.log(`Porcentaje HP: ${porcHP}`)
     return (
         <div className='container-pokemon-details'>
             <div className="pokeball">
