@@ -27,8 +27,8 @@ const PokemonDetails = () => {
             <div className="header">
                 <img src={logo_pokemon}/>
             </div>
-            <div className="grid-container">
-                <div className="hero-detail">
+            <div className="row">
+                <div className="hero-detail col-12">
                     <div className='hero-first'>
                         <div>
                             <span>{pokemon.weight}</span>
@@ -47,17 +47,7 @@ const PokemonDetails = () => {
                         <span># {pokemon.id}</span>
                     </div>
                 </div>
-                <div className="movements">
-                    <div>
-                        <h2>Movements</h2>
-                        {
-                            pokemon.moves?.map(item => (
-                                <span key={item.move.url}>{item.move.name}</span>
-                            ))
-                        }
-                    </div>
-                </div>
-                <div className="type">
+                <div className="type col-12 col-md-6">
                     <h2>Type</h2>
                     {
                         pokemon.types?.map(item => (
@@ -65,7 +55,7 @@ const PokemonDetails = () => {
                         ))
                     }
                 </div>
-                <div className="habilities">
+                <div className="abilities col-12 col-md-6">
                     <h2>Abilities</h2>
                     {
                         pokemon.abilities?.map(item => (
@@ -73,7 +63,7 @@ const PokemonDetails = () => {
                         ))
                     }
                 </div>
-                <div className="stats">
+                <div className="stats col-12 col-md-8">
                     <h2>Stats base</h2>
                     <div className="item">
                         <div className='title'><span>HP:</span></div>
@@ -106,6 +96,16 @@ const PokemonDetails = () => {
                                 {pokemon.stats?.[2].base_stat}/150
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="movements col-12 col-md-4">
+                    <div>
+                        <h2>Movements</h2>
+                        {
+                            pokemon.moves?.map(item => (
+                                <span key={item.move.url}>{item.move.name}</span>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
